@@ -11,6 +11,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class LoginController {
@@ -23,11 +26,22 @@ public class LoginController {
     @FXML
     private PasswordField txtPassword;
 
+    String user = "";
+    String pass = "";
+    public LoginController() throws IOException {
+//        FileReader reader = new FileReader("Account.txt");
+//        BufferedReader test1 = new BufferedReader(reader);
+//        String ahihi = test1.readLine();
+//        String[] abc = ahihi.split(",");
+//        user = abc[0];
+//        pass = abc[1];
+    }
+
     public void Login(ActionEvent event) throws IOException {
-        if (txtUserName.getText().equals("user") && txtPassword.getText().equals("password")) {
+        if (txtUserName.getText().equals(user) && txtPassword.getText().equals(pass)) {
 //            lblStatus.setText("Login Success");
             Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("book.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();
