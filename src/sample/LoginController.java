@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,14 +18,14 @@ public class LoginController {
     private Label lblStatus;
 
     @FXML
-    private  txtUserName;
+    private TextField txtUserName;
 
     @FXML
-    private Label txtPassword;
+    private PasswordField txtPassword;
 
     public void Login(ActionEvent event) throws IOException {
         if (txtUserName.getText().equals("user") && txtPassword.getText().equals("password")) {
-            lblStatus.setText("Login Success");
+//            lblStatus.setText("Login Success");
             Stage primaryStage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
             Scene scene = new Scene(root);
@@ -37,12 +39,12 @@ public class LoginController {
         }
     }
 
-//    public void Create(ActionEvent event) throws IOException {
-//        Stage primaryStage = new Stage();
-//        Parent root = FXMLLoader.load(getClass().getResource("create.fxml"));
-//        Scene scene = new Scene(root);
-//        primaryStage.setScene(scene);
-//        primaryStage.show();
-//    }
+    public void Create(ActionEvent event) throws IOException {
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("create.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
 }
