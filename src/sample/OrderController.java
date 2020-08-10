@@ -23,57 +23,49 @@ public class OrderController {
 
 
     public void Order (ActionEvent event) throws IOException {
-        FileWriter writer = new FileWriter(new File("Order.txt"));
+        FileWriter writer = new FileWriter(new File("Order.txt"),true);
 
         BufferedWriter buffer = new BufferedWriter(writer);
         if (DuoiKhungLong.isSelected()){
-            buffer.write("Đuôi khủng long");
-            buffer.close();
+            buffer.write("Đuôi khủng long \n");
         }
 
         if (VayCaMap.isSelected()){
-            buffer.write("Vây cá mập");
-            buffer.close();
+            buffer.write("Vây cá mập \n");
         }
 
         if (MongGioVoi.isSelected()){
-            buffer.write("Móng giò voi");
-            buffer.close();
+            buffer.write("Móng giò voi \n");
         }
 
         if (LongSuTu.isSelected()){
-            buffer.write("Lòng sư tử");
-            buffer.close();
+            buffer.write("Lòng sư tử \n");
         }
 
         if (NuocKhoang.isSelected()){
-            buffer.write("Nước khoáng");
-            buffer.close();
+            buffer.write("Nước khoáng \n");
         }
 
         if (TraTranh.isSelected()){
-            buffer.write("Trà tranh");
-            buffer.close();
+            buffer.write("Trà tranh \n");
         }
 
         if (TraSua.isSelected()){
-            buffer.write("Trà sữa");
-            buffer.close();
+            buffer.write("Trà sữa \n");
         }
 
         if (Bia.isSelected()){
-            buffer.write("Bia");
-            buffer.close();
+            buffer.write("Bia \n");
         }
 
         if (RuouNoi.isSelected()){
-            buffer.write("Rượu nội");
-            buffer.close();
+            buffer.write("Rượu nội \n");
         }
 
         if (RuouNgoai.isSelected()){
-            buffer.write("Rượu ngoại");
-            buffer.close();
+            buffer.write("Rượu ngoại \n");
         }
+        buffer.write("--------------------------\n");
+        buffer.close();
     }
 }

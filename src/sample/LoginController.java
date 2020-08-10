@@ -38,16 +38,13 @@ public class LoginController {
         String[] abc = ahihi.split(",");
         user = abc[0];
         pass = abc[1];
-        user1 = abc [3];
-        pass1 = abc [4];
     }
 
 
     public void LoginPass(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-        if (txtUserName.getText().equals(user) && txtPassword.getText().equals(pass)
-        ||txtUserName.getText().equals(user1) && txtPassword.getText().equals(pass1)) {
+        if (txtUserName.getText().equals(user) && txtPassword.getText().equals(pass)) {
             Stage primaryStage = new Stage();
             primaryStage.setTitle("Demon Restaurant");
             Parent root = FXMLLoader.load(getClass().getResource("book.fxml"));
