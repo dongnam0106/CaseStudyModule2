@@ -28,7 +28,9 @@ public class LoginController {
     private PasswordField txtPassword;
 
     String user = "";
+    String user1 = "";
     String pass = "";
+    String pass1 = "";
     public LoginController() throws IOException {
         FileReader reader = new FileReader("Account.txt");
         BufferedReader test1 = new BufferedReader(reader);
@@ -36,13 +38,16 @@ public class LoginController {
         String[] abc = ahihi.split(",");
         user = abc[0];
         pass = abc[1];
+        user1 = abc [3];
+        pass1 = abc [4];
     }
 
 
     public void LoginPass(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-        if (txtUserName.getText().equals(user) && txtPassword.getText().equals(pass)) {
+        if (txtUserName.getText().equals(user) && txtPassword.getText().equals(pass)
+        ||txtUserName.getText().equals(user1) && txtPassword.getText().equals(pass1)) {
             Stage primaryStage = new Stage();
             primaryStage.setTitle("Demon Restaurant");
             Parent root = FXMLLoader.load(getClass().getResource("book.fxml"));

@@ -3,10 +3,12 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
 
 import java.io.*;
 
 public class OrderController {
+    BookController bookController = new BookController();
     @FXML
     public CheckBox DuoiKhungLong;
     public CheckBox VayCaMap;
