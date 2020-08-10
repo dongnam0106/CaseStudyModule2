@@ -14,9 +14,10 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="NewUserName" layoutX="132.0" layoutY="79.0" promptText="UserName" />
+      <TextField fx:id="NewUserName" layoutX="132.0" layoutY="79.0" promptText="UserName"  />
       <PasswordField fx:id="NewPassword" layoutX="132.0" layoutY="126.0" promptText="Password" />
       <TextField fx:id="NewPhoneNum" layoutX="132.0" layoutY="171.0" promptText="PhoneNumber" />
-      <Button layoutX="193.0" layoutY="229.0" mnemonicParsing="false" onAction="#NewAcc" text="Create" />
+      <Button layoutX="132.0" layoutY="229.0" mnemonicParsing="false" onAction="#NewAcc" text="Create" />
+      <Button layoutX="262.0" layoutY="229.0" mnemonicParsing="false" onAction="#Login" text="Login" />
    </children>
 </AnchorPane>

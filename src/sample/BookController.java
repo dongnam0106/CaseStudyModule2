@@ -41,6 +41,8 @@ public class BookController {
 
         alert.setContentText("Cảm ơn quý khánh đã sử dụng dịch vụ!");
         alert.show();
+
+        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     public void Reset (ActionEvent event) {

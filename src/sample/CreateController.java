@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -23,9 +24,9 @@ public class CreateController {
     public TextField NewPhoneNum;
 
     public void NewAcc (ActionEvent event) throws IOException {
-//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-        FileWriter writer = new FileWriter(new File("Account.txt"));
+        FileWriter writer = new FileWriter(new File("Account.txt"), true);
         String newUserName = NewUserName.getText();
         String newPassword = NewPassword.getText();
         String newPhoneNum = NewPhoneNum.getText();
@@ -33,6 +34,23 @@ public class CreateController {
         BufferedWriter buffer = new BufferedWriter(writer);
         buffer.write(newUserName + "," + newPassword + "," + newPhoneNum + ",");
         buffer.close();
+
+        if (newUserName == null){
+            alert.setContentText("Nhập user name!");
+            alert.show();
+        }
+
+//        ((Node) (event.getSource())).getScene().getWindow().hide();
+    }
+
+    public void Login(ActionEvent event) throws IOException {
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
 }
