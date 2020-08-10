@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.OrderController">
+   <children>
+      <Label layoutX="167.0" layoutY="40.0" text="Demon Restaurant Menu" textFill="#e80000">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="DuoiKhungLong" layoutX="74.0" layoutY="150.0" mnemonicParsing="false" text="Đuôi khủng long" />
+      <CheckBox fx:id="VayCaMap" layoutX="74.0" layoutY="194.0" mnemonicParsing="false" text="Vây cá mập" />
+      <CheckBox fx:id="MongGioVoi" layoutX="74.0" layoutY="241.0" mnemonicParsing="false" text="Móng giò voi" />
+      <CheckBox fx:id="LongSuTu" layoutX="74.0" layoutY="291.0" mnemonicParsing="false" text="Lòng sư tử" />
+      <CheckBox fx:id="Bia" layoutX="446.0" layoutY="150.0" mnemonicParsing="false" text="Bia" />
+      <CheckBox fx:id="RuouNoi" layoutX="446.0" layoutY="194.0" mnemonicParsing="false" text="Rượu nội" />
+      <CheckBox fx:id="RuouNgoai" layoutX="446.0" layoutY="241.0" mnemonicParsing="false" text="Rượu ngoại" />
+      <CheckBox fx:id="NuocKhoang" layoutX="254.0" layoutY="150.0" mnemonicParsing="false" text="Nước khoáng" />
+      <CheckBox fx:id="TraTranh" layoutX="254.0" layoutY="194.0" mnemonicParsing="false" text="Trà tranh" />
+      <CheckBox fx:id="TraSua" layoutX="254.0" layoutY="241.0" mnemonicParsing="false" text="Trà sữa" />
+      <Label layoutX="74.0" layoutY="99.0" text="Đồ ăn" />
+      <Label layoutX="254.0" layoutY="99.0" text="Nước giải khát" />
+      <Label layoutX="446.0" layoutY="99.0" text="Đồ uống có cồn" />
+      <Button layoutX="446.0" layoutY="312.0" mnemonicParsing="false" onAction="#Order" prefHeight="35.0" prefWidth="76.0" text="Order">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

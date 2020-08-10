@@ -23,7 +23,7 @@ public class CreateController {
     public PasswordField NewPassword;
     public TextField NewPhoneNum;
 
-    public void NewAcc (ActionEvent event) throws IOException {
+    public void NewAcc(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
         FileWriter writer = new FileWriter(new File("Account.txt"), true);
@@ -31,16 +31,26 @@ public class CreateController {
         String newPassword = NewPassword.getText();
         String newPhoneNum = NewPhoneNum.getText();
 
-        BufferedWriter buffer = new BufferedWriter(writer);
-        buffer.write(newUserName + "," + newPassword + "," + newPhoneNum + ",");
-        buffer.close();
-
-        if (newUserName == null){
-            alert.setContentText("Nhập user name!");
+        if (newUserName.equals("") || newUserName.length() == 0
+                || newPassword.equals("") || newPassword.length() == 0
+                || newPhoneNum.equals("") || newPhoneNum.length() == 0) {
+            alert.setContentText("Không được để trống thông tin!");
             alert.show();
+        } else {
+            BufferedWriter buffer = new BufferedWriter(writer);
+            buffer.write(newUserName + "," + newPassword + "," + newPhoneNum + ",");
+            buffer.close();
+
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("Demon Restaurant");
+            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
         }
 
-//        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     public void Login(ActionEvent event) throws IOException {

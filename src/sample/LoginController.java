@@ -38,21 +38,23 @@ public class LoginController {
         pass = abc[1];
     }
 
+
     public void LoginPass(ActionEvent event) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
         if (txtUserName.getText().equals(user) && txtPassword.getText().equals(pass)) {
-//            lblStatus.setText("Login Success");
             Stage primaryStage = new Stage();
+            primaryStage.setTitle("Demon Restaurant");
             Parent root = FXMLLoader.load(getClass().getResource("book.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Đăng nhập thành công!");
             alert.show();
+            ((Node) (event.getSource())).getScene().getWindow().hide();
         } else {
-            lblStatus.setText("Login Failed");
+            lblStatus.setText("Sai tài khoản hoặc mật khẩu");
         }
-        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     public void Create(ActionEvent event) throws IOException {

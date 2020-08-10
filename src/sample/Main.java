@@ -12,6 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
+            primaryStage.setTitle("Demon Restaurant");
             Parent root = FXMLLoader.load(getClass().getResource("create.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
